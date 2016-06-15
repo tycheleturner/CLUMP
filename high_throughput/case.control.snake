@@ -50,7 +50,7 @@ rule case_control_clump:
 
         grep -w {params.prefix} {input} > input_genes/{params.prefix}
         grep -w {params.prefix} {CONTROLS} > control_genes/{params.prefix}
-        python ../combined.clump.py -f input_genes/{params.prefix} -p ../protein.2.length.txt -c control_genes/{params.prefix} -z {PERMUTATIONS} > clump_results/{params.prefix}
+        python ../combined.clump.py -f input_genes/{params.prefix} -p ../protein.2.length.txt -c control_genes/{params.prefix} -z {PERMUTATIONS} -m 2 > clump_results/{params.prefix}
 
         touch {output}
 	"""
