@@ -48,7 +48,7 @@ rule raw_score_clump:
         mkdir -p track
 
         grep -w {params.prefix} {input} > input_genes/{params.prefix}
-        python /net/eichler/vol4/home/tychele/github/CLUMP/combined.cluster.clump.py -f input_genes/{params.prefix} -p ../protein.2.length.txt -m 2 > clump_results/{params.prefix}
+        python ../combined.cluster.clump.py -f input_genes/{params.prefix} -p ../protein.2.length.txt -m 2 > clump_results/{params.prefix}
 
         touch {output}
 	"""
