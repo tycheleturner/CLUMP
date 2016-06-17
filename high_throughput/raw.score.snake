@@ -36,7 +36,7 @@ rule raw_score_clump:
         params: prefix="{protein}", sge_opts="-l mfree=500M,h_rt=24:00:00 -N raw_score_clump -cwd"
         shell: """
         set +e
-
+        module purge
         module load modules modules-init modules-gs modules-eichler
         module unload anaconda
         module load R/3.0.0
